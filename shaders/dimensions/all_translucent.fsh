@@ -635,7 +635,7 @@ if (gl_FragCoord.x * texelSize.x < 1.0  && gl_FragCoord.y * texelSize.y < 1.0 )	
 	#endif
 
 	#ifdef NETHER_SHADER
-		Indirect_lighting = skyCloudsFromTexLOD2(worldSpaceNormal, colortex4, 6).rgb / 30.0 ;
+		Indirect_lighting = skyCloudsFromTexLOD2(worldSpaceNormal, colortex4, 6).rgb / 100.0 ;
 	#endif
 
 	#ifdef END_SHADER
@@ -760,13 +760,13 @@ if (gl_FragCoord.x * texelSize.x < 1.0  && gl_FragCoord.y * texelSize.y < 1.0 )	
 					SunReflection = Direct_lighting * GGX(normal, -normalize(viewPos), WsunVec*mat3(gbufferModelViewInverse), max(roughness,0.035), f0) * Metals; 
 				#endif
 				#ifdef WATER_BACKGROUND_SPECULAR
- 					if(isEyeInWater == 0 && !isReflectiveEntity) BackgroundReflection = skyCloudsFromTex(mat3(gbufferModelViewInverse) * reflectedVector, colortex4).rgb / 30.0 * Metals;
+ 					if(isEyeInWater == 0 && !isReflectiveEntity) BackgroundReflection = skyCloudsFromTex(mat3(gbufferModelViewInverse) * reflectedVector, colortex4).rgb / 100.0 * Metals;
 				#endif
 
 				if(isEyeInWater == 1 && isWater) BackgroundReflection.rgb = exp(-8.0 * vec3(Water_Absorb_R, Water_Absorb_G, Water_Absorb_B)) * clamp(WsunVec.y*lightCol.a,0,1);
 			#else
 				#ifdef WATER_BACKGROUND_SPECULAR 
- 					if(isEyeInWater == 0) BackgroundReflection = skyCloudsFromTexLOD2(mat3(gbufferModelViewInverse) * reflectedVector, colortex4, 0).rgb / 30.0 * Metals;
+ 					if(isEyeInWater == 0) BackgroundReflection = skyCloudsFromTexLOD2(mat3(gbufferModelViewInverse) * reflectedVector, colortex4, 0).rgb / 100.0 * Metals;
 				#endif
 			#endif
 

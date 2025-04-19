@@ -474,7 +474,7 @@ void main() {
     }
   #endif
   
-  // if(texcoord.x > 0.5 )color.rgb = skyCloudsFromTex(np3, colortex4).rgb/30.0;
+  // if(texcoord.x > 0.5 )color.rgb = skyCloudsFromTex(np3, colortex4).rgb/100.0;
 
   gl_FragData[0].r = bloomyFogMult; // pass fog alpha so bloom can do bloomy fog
   gl_FragData[1].rgb = clamp(color.rgb, 0.0,68000.0);

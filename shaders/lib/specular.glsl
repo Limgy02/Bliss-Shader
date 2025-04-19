@@ -243,9 +243,9 @@ void DoSpecularReflections(
 	#ifdef Sky_reflection
 
 		#ifdef OVERWORLD_SHADER
-			if(hasReflections) Background_Reflection = (skyCloudsFromTex(L, colortex4).rgb / 30.0) * Metals ;
+			if(hasReflections) Background_Reflection = (skyCloudsFromTex(L, colortex4).rgb / 100.0) * Metals ;
 		#else
-			if(hasReflections) Background_Reflection = (skyCloudsFromTexLOD2(L, colortex4, sqrt(Roughness) * 6.0).rgb / 30.0) * Metals;
+			if(hasReflections) Background_Reflection = (skyCloudsFromTexLOD2(L, colortex4, sqrt(Roughness) * 6.0).rgb / 100.0) * Metals;
 		#endif
 
 		// take fresnel and lightmap levels into account and write to the final color

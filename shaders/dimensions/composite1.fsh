@@ -1127,8 +1127,8 @@ void main() {
 		#endif
 
 		#ifdef NETHER_SHADER
-			Indirect_lighting = skyCloudsFromTexLOD2(normal, colortex4, 6).rgb / 30.0;
-			vec3 up = skyCloudsFromTexLOD2(vec3(0.0,1.0,0.0), colortex4, 6).rgb / 30.0;
+			Indirect_lighting = skyCloudsFromTexLOD2(normal, colortex4, 6).rgb / 100.0;
+			vec3 up = skyCloudsFromTexLOD2(vec3(0.0,1.0,0.0), colortex4, 6).rgb / 100.0;
 			
 			#if indirect_effect == 1
 				Indirect_lighting = mix(up, Indirect_lighting,  clamp(pow(1.0-pow(1.0-SSAO_SSS.x, 0.5),2.0),0.0,1.0));

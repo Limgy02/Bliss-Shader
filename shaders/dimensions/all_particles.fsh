@@ -438,7 +438,7 @@ void main() {
 		#endif
 		
 		#ifdef NETHER_SHADER
-			Indirect_lighting = skyCloudsFromTexLOD2(vec3(0.0,1.0,0.0), colortex4, 6).rgb / 30.0;
+			Indirect_lighting = skyCloudsFromTexLOD2(vec3(0.0,1.0,0.0), colortex4, 6).rgb / 100.0;
 		#endif
 
 		#ifdef END_SHADER
